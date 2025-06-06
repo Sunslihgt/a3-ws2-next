@@ -21,6 +21,7 @@ export default function Home() {
           <ProductCard
             key={product.id}
             product={product}
+            displayAll={false}
           />
         ))}
       </div>

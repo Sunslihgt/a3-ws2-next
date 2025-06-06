@@ -14,3 +14,13 @@ export const getProducts = async () => {
         throw error;
     }
 };
+
+export const getProduct = async (id: number) => {
+    try {
+        const response = await apiClient.get(`/products/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error("Erreur lors de la récupération du produit :", error);
+        throw error;
+    }
+};
