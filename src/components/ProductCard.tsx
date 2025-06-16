@@ -1,3 +1,5 @@
+"use client"
+
 import { Product } from "@/types/Product";
 import { AiFillStar, AiFillShopping } from 'react-icons/ai';
 import Link from "next/link";
@@ -10,12 +12,10 @@ type ProductCardProps = {
 
 export default function ProductCard({ product, displayAll }: ProductCardProps) {
     console.log(displayAll, product);
-    const cartContext = useCart();
+    const { addToCart } = useCart();
 
     const handleAddedToCart = () => {
-        if (cartContext?.addToCart) {
-            cartContext.addToCart(product);
-        }
+        addToCart(product);
     }
 
     return (
